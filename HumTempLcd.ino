@@ -70,7 +70,7 @@ void loop() {
     return;
   }
   // Light up a red light if humidity goes over 55%
-  if (humidity > 66) {
+  if (humidity > 55) {
     digitalWrite(ledPin,HIGH);
   } else {
     digitalWrite(ledPin,LOW);
@@ -89,7 +89,7 @@ void loop() {
   lcd.print(rtc.getDateStr());
   lcd.setCursor(0,1);
   lcd.print(rtc.getTimeStr());
-  delay(4000);
+  delay(2000);
   lcd.clear();
   
   //Do the serial printing, mostly for buxfixing.
@@ -98,5 +98,4 @@ void loop() {
   Serial.print("Sample is OK: ");
   Serial.print((int)temperature); Serial.print(" *C, "); 
   Serial.print((int)humidity); Serial.println(" %");
-  // DHT11 sampling rate is 1HZ.
 }
